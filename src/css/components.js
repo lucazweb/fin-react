@@ -33,7 +33,7 @@ export const AppBox = styled.div`
     }
 `;
 
-export const StocksPanel = styled.div`
+export const StocksPanelBox = styled.div`
   display: flex;
   width: 70%;
   text-align: center;
@@ -56,7 +56,7 @@ export const StocksPanel = styled.div`
   }
 `;
 
-export const StockDetail = styled.ul`
+export const StockDetailList = styled.ul`
   display:flex;
   flex-flow: row wrap;
   width: 100%;
@@ -80,7 +80,7 @@ export const StockDetail = styled.ul`
 
 `;
 
-export const StockChart = styled.div`
+export const StockChartBox = styled.div`
   display: flex;
   width: 100%;
   min-height: 300px;

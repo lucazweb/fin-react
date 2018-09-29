@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import StockInput from './components/StockInput';
+import StockPanel from './components/StockPanel';
+import StockDetail from './components/StockDetail';
+import StockChart from './components/StockChart';
 import './css/global';
-import { AppBox, StocksPanel, StockDetail, StockChart } from './css/components';
+import { AppBox } from './css/components';
 
 class App extends Component {
   render() {
@@ -10,41 +14,13 @@ class App extends Component {
             <h1> Fin.React</h1>
           </div>
 
-          <div className="main-form">
-            <input className="main-input" placeholder="Ex. aapl" />
-          </div>
+          <StockInput />
 
-          <StocksPanel>
-            <span className="stock-value">224.95</span>
-            <span> + 4.53 (+2.06%) </span>
-          </StocksPanel>
+          <StockPanel />
 
-          <StockDetail>
-            <li>
-                <strong>Open</strong>
-                <span>220.42</span>
-            </li>
-            <li>
-                <strong>Bid</strong>
-                <span>220.42</span>
-            </li>
-            <li>
-                <strong>Ask</strong>
-                <span>220.42</span>
-            </li>
-            <li>
-                <strong>Open</strong>
-                <span>220.42</span>
-            </li>
-            <li>
-                <strong>Open</strong>
-                <span>220.42</span>
-            </li>
-          </StockDetail>
+          <StockDetail />
 
           <StockChart />
-
-
 
         </AppBox>
 
