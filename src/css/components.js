@@ -4,7 +4,7 @@ export const AppBox = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 600px;
+  width: 700px;
   margin:100px auto;
   padding: 25px;
   border-radius: 4px;
@@ -83,8 +83,9 @@ export const StockDetailList = styled.ul`
 export const StockChartBox = styled.div`
   display: flex;
   width: 100%;
-  min-height: 300px;
+  height: 300px;
   margin-top: 10px;
-  background: #f3f3f3;
+  border: 1px solid #ccc;
+
 
 `;
