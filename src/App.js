@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
+
 import StockInput from './components/StockInput';
 import StockPanel from './components/StockPanel';
 import StockDetail from './components/StockDetail';
@@ -9,6 +12,7 @@ import { AppBox } from './css/components';
 class App extends Component {
   render() {
     return (
+      <Provider store={store}>
         <AppBox>
           <div className="header">
             <h1> Fin.React</h1>
@@ -21,8 +25,9 @@ class App extends Component {
           <StockDetail />
 
           <StockChart />
-
         </AppBox>
+      </Provider>
+
 
 
     );
