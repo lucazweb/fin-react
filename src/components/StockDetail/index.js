@@ -8,7 +8,7 @@ const StockDetail = ({stocks}) => (
   <Fragment>
   {
     stocks.close !== null  && (
-      <StockDetailList>
+      <StockDetailList initalPose={'exit'} pose={'enter'} >
           <li>
               <strong>Segmento</strong>
               <span>{stocks.sector}</span>

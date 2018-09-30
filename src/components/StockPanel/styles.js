@@ -1,6 +1,12 @@
 import styled from 'styled-components';
+import posed from 'react-pose';
 
-export const StocksPanelBox = styled.div`
+const Intro = posed.div({
+  enter: { opacity: 1, delay: 500 },
+  exit: { opacity: 0, transition: { duration: 200 } },
+});
+
+export const StocksPanelBox = styled(Intro)`
   display: flex;
   width: 70%;
   text-align: center;
@@ -12,7 +18,6 @@ export const StocksPanelBox = styled.div`
     font-size: 1.8em;
     color: #669966;
     letter-spacing: 0.2px;
-
   }
 
   .stock-value{

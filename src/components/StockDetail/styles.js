@@ -1,6 +1,12 @@
 import styled from 'styled-components';
+import posed from 'react-pose';
 
-export const StockDetailList = styled.ul`
+const Intro = posed.ul({
+  enter: { opacity: 1, delay: 800 },
+  exit: { opacity: 0, transition: { duration: 200 } },
+});
+
+export const StockDetailList = styled(Intro)`
   display:flex;
   flex-flow: row wrap;
   width: 100%;

@@ -7,7 +7,7 @@ import { CompanyTitle } from '../../css/common_components';
 const StockPanel = ({stocks}) => (
   <Fragment>
     <CompanyTitle> {stocks.company} </CompanyTitle>
-    <StocksPanelBox>
+    <StocksPanelBox pose={stocks.close !== null ? 'enter' : 'exit'} >
       { ((stocks.error == null) && (stocks.close !== null)) && (
         <Fragment>
           <span className="stock-value">{stocks.close}</span>

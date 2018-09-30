@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Legend, Tooltip } from 'recharts';
-import { Eye, Grow, Spinner } from 'react-preloading-component';
-import { PreloaderBox  }  from '../../css/common_components';
+import { Grow } from 'react-preloading-component';
+import { PreloaderBox }  from '../../css/common_components';
 import { StockChartBox } from './styles';
 import { connect } from 'react-redux';
 
@@ -17,10 +18,10 @@ const data = [
 
 const StockChart = ({stocks}) => (
   <Fragment>
-    {stocks.loading && (<PreloaderBox><Spinner size={50} color="#0047bb" /></PreloaderBox>)}
+    {stocks.loading && (<PreloaderBox><Grow size={40} color="#0047bb" /></PreloaderBox>)}
     {
       stocks.close !== null && (
-        <StockChartBox>
+        <StockChartBox initialPose={'exit'} pose={'enter'}>
             <LineChart width={600} height={300} margin={{top:5, left:0}} data={stocks.chart}>
               {/* <CartesianGrid /> */}
               <XAxis dataKey="label" />
@@ -32,8 +33,32 @@ const StockChart = ({stocks}) => (
       )
     }
   </Fragment>
-
 );
+
+StockChart.propTypes = {
+  stocks: PropTypes.shape({
+    loading: PropTypes.bool,
+    //error: PropTypes.oneOfType([null, PropTypes.string]),
+    chart: PropTypes.arrayOf(PropTypes.shape({
+      change: PropTypes.number,
+      changeOverTime: PropTypes.number,
+      changePercent: PropTypes.number,
+      close: PropTypes.number,
+      date: PropTypes.string,
+      high: PropTypes.number,
+      label: PropTypes.string,
+      open: PropTypes.number,
+      unadjustedVolume: PropTypes.number,
+      volume: PropTypes.number,
+      vwap: PropTypes.number,
+    })),
+    close: PropTypes.oneOfType([null, PropTypes.string]),
+    open: PropTypes.oneOfType([null, PropTypes.string]),
+    change: PropTypes.oneOfType([null, PropTypes.number]),
+    changePercent: PropTypes.oneOfType([null, PropTypes.number]),
+    company: PropTypes.string,
+  }).isRequired
+}
 
 const mapStateToProps = state => ({
   stocks: state.stocks,

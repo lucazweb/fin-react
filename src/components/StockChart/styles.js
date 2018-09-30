@@ -1,9 +1,16 @@
 import styled from 'styled-components';
+import posed from 'react-pose';
 
-export const StockChartBox = styled.div`
+const Intro = posed.div({
+  enter: { opacity: 1, delay: 500 },
+  exit: { opacity: 0, transition: { duration: 200 } }
+});
+
+export const StockChartBox = styled(Intro)`
   display: flex;
+  opacity:0;
   width: 100%;
-  transition: all ease 0.5s;
+  /* transition: all ease 0.5s; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
