@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as stockActions from '../store/actions/stocks';
+import { Message } from '../css/components';
 
 class StockInput extends Component{
   static propTypes = {
@@ -23,9 +24,11 @@ class StockInput extends Component{
     return (
       <div className="main-form">
         <input onChange={(e) => {this.handleStockRequest(e.target.value)}} className="main-input" placeholder="Ex. aapl" />
-        {!!this.props.stocks.error &&
-          (<span style={{color:  '#900'}}> {this.props.error} </span>)
+
+        {this.props.stocks.error !== null &&
+          (<Message> {this.props.stocks.error }</Message>)
         }
+
       </div>
 
     );

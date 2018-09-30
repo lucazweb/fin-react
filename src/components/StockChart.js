@@ -1,6 +1,7 @@
-import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Legend } from 'recharts';
-import { StockChartBox  }  from '../css/components';
+import React, { Fragment } from 'react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Legend, Tooltip } from 'recharts';
+import { Eye, Grow, Spinner } from 'react-preloading-component';
+import { StockChartBox, PreloaderBox  }  from '../css/components';
 import { connect } from 'react-redux';
 
 const data = [
@@ -14,15 +15,23 @@ const data = [
 ];
 
 const StockChart = ({stocks}) => (
-    <StockChartBox>
-      <Legend />
-      <LineChart width={600} height={300} margin={{top:5, left:0}} data={stocks.chart}>
-        <CartesianGrid />
-        <XAxis dataKey="label" />
-        <YAxis />
-        <Line type="monotone" dataKey="high" label="high" stroke="#900" />
-      </LineChart>
-    </StockChartBox>
+  <Fragment>
+    {stocks.loading && (<PreloaderBox><Spinner size={50} color="#0047bb" /></PreloaderBox>)}
+    {
+      stocks.close !== null && (
+        <StockChartBox>
+            <LineChart width={600} height={300} margin={{top:5, left:0}} data={stocks.chart}>
+              {/* <CartesianGrid /> */}
+              <XAxis dataKey="label" />
+              <YAxis dataKey="high" />
+              <Tooltip />
+              <Line type="monotone" dataKey="high" label="high" strokeWidth={2} stroke="#900" />
+            </LineChart>
+        </StockChartBox>
+      )
+    }
+  </Fragment>
+
 );
 
 const mapStateToProps = state => ({

@@ -5982,6 +5982,12 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
+react-preloading-component@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/react-preloading-component/-/react-preloading-component-0.0.5.tgz#825a417c455247d050d93772d4eaa24c1effe7d6"
+  dependencies:
+    prop-types "^15.6.0"
+
 react-redux@^5.0.7:
   version "5.0.7"
   resolved "http://registry.npmjs.org/react-redux/-/react-redux-5.0.7.tgz#0dc1076d9afb4670f993ffaef44b8f8c1155a4c8"

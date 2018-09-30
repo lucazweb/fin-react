@@ -1,9 +1,13 @@
 const INITIAL_STATE = {
-  symbol: '',
   loading: false,
   error: null,
   chart: [],
-  stockdata: [],
+  close: null,
+  open: null,
+  change: null,
+  changePercent: null,
+  company: null,
+  sector: null,
 }
 
 export default function(state = INITIAL_STATE, action){
@@ -12,19 +16,25 @@ export default function(state = INITIAL_STATE, action){
       return { ...state, loading: true};
 
     case 'GET_STOCK_SUCCESS':
-    console.log(action.payload.data);
-    console.log(action.payload.data.chart);
-      return {...state,
-        symbol: action.payload.data.quote.symbol,
+      return {
+        ...state,
+        loading: false,
+        error: null,
         chart: action.payload.data.chart,
-        stockdata: action.payload.data,
+        close: action.payload.data.quote.close,
+        open: action.payload.data.quote.open,
+        change: action.payload.data.quote.change,
+        changePercent: action.payload.data.quote.changePercent,
+        company: action.payload.data.quote.companyName,
+        sector: action.payload.data.quote.sector,
       }
 
     case 'GET_STOCK_FAILURE':
-    return  Object.assign({}, ...state, {
-      loading: false,
-      error: action.payload.error,
-    })
+    console.log(action.payload.error);
+    return {
+      ...INITIAL_STATE,
+      error: action.payload.error
+    }
 
     default:
       return state;

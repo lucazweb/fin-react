@@ -1,29 +1,46 @@
-import React from 'react';
-import { StockDetailList } from '../css/components';
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { StockDetailList, CompanyTitle } from '../css/components';
 
-const StockDetail = () => (
-    <StockDetailList>
-      <li>
-          <strong>Open</strong>
-          <span>220.42</span>
-      </li>
-      <li>
-          <strong>Bid</strong>
-          <span>220.42</span>
-      </li>
-      <li>
-          <strong>Ask</strong>
-          <span>220.42</span>
-      </li>
-      <li>
-          <strong>Open</strong>
-          <span>220.42</span>
-      </li>
-      <li>
-          <strong>Open</strong>
-          <span>220.42</span>
-      </li>
-    </StockDetailList>
+const StockDetail = ({stocks}) => (
+  <Fragment>
+  {
+    stocks.close !== null  && (
+      <StockDetailList>
+          <li>
+              <strong>Segmento</strong>
+              <span>{stocks.sector}</span>
+          </li>
+          <li>
+              <strong>Abrir</strong>
+              <span>{stocks.open}</span>
+          </li>
+          <li>
+              <strong>Variação</strong>
+              <span>{stocks.change}</span>
+          </li>
+      </StockDetailList>
+    )
+  }
+
+  </Fragment>
 );
 
-export default StockDetail;
+StockDetail.propTypes = {
+  stocks: PropTypes.shape({
+    loading: PropTypes.bool,
+    error: PropTypes.oneOfType([null, PropTypes.string]),
+    close: PropTypes.oneOfType([null, PropTypes.string]),
+    open: PropTypes.oneOfType([null, PropTypes.string]),
+    change: PropTypes.oneOfType([null, PropTypes.number]),
+    changePercent: PropTypes.oneOfType([null, PropTypes.number]),
+    company: PropTypes.string,
+  }).isRequired
+};
+
+const mapStateToProps = state => ({
+  stocks: state.stocks,
+})
+
+export default connect(mapStateToProps)(StockDetail);

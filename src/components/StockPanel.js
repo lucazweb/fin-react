@@ -1,11 +1,35 @@
-import React from 'react';
-import { StocksPanelBox } from '../css/components';
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { StocksPanelBox, CompanyTitle } from '../css/components';
 
-const StockPanel = () => (
-  <StocksPanelBox>
-    <span className="stock-value">224.95</span>
-    <span> + 4.53 (+2.06%) </span>
-  </StocksPanelBox>
+const StockPanel = ({stocks}) => (
+  <Fragment>
+    <CompanyTitle> {stocks.company} </CompanyTitle>
+    <StocksPanelBox>
+      { ((stocks.error == null) && (stocks.close !== null)) && (
+        <Fragment>
+          <span className="stock-value">{stocks.close}</span>
+          <span> {stocks.change }({stocks.changePercent}%) </span>
+        </Fragment>
+      )}
+    </StocksPanelBox>
+  </Fragment>
 );
 
-export default StockPanel;
+StockPanel.propTypes = {
+  stocks: PropTypes.shape({
+    loading: PropTypes.bool,
+    error: PropTypes.oneOfType([null, PropTypes.string]),
+    close: PropTypes.oneOfType([null, PropTypes.string]),
+    change: PropTypes.oneOfType([null, PropTypes.number]),
+    changePercent: PropTypes.oneOfType([null, PropTypes.number]),
+    company: PropTypes.string,
+  }).isRequired
+};
+
+const mapStateToProps = state => ({
+  stocks: state.stocks,
+});
+
+export default connect(mapStateToProps)(StockPanel);
