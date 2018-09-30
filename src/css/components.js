@@ -118,6 +118,6 @@ export const CompanyTitle = styled.h2`
   font-weight: normal;
 `;
 
-export const PreloaderBox = div.styled`
+export const PreloaderBox = styled.div`
   margin-top:30px;
 `;
