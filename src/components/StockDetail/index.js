@@ -6,9 +6,7 @@ import { CompanyTitle } from '../../css/common_components';
 
 const StockDetail = ({stocks}) => (
   <Fragment>
-  {
-    stocks.close !== null  && (
-      <StockDetailList initalPose={'exit'} pose={'enter'} >
+      <StockDetailList pose={ stocks.close !== null ? 'enter' : 'exit'} >
           <li>
               <strong>Segmento</strong>
               <span>{stocks.sector}</span>
@@ -22,9 +20,6 @@ const StockDetail = ({stocks}) => (
               <span>{stocks.change}</span>
           </li>
       </StockDetailList>
-    )
-  }
-
   </Fragment>
 );
 

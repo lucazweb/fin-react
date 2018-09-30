@@ -3,9 +3,12 @@ import posed from 'react-pose';
 
 const Intro = posed.div({
   enter: { height: 750, transition: {duration: 100}, delay: 250 },
-  exit: { height: 250, transition: { duration: 150 } },
-  // enter: { opacity: 1, delay: 500 },
-  // exit: { opacity: 0, transition: { duration: 200 } },
+  exit: { height: 250, transition: { duration: 150 }, delay: 100 },
+});
+
+const Fade = posed.h2({
+  enter: { opacity: 1, delay: 500 },
+  exit: { opacity: 0, transition: { duration: 200 } },
 });
 
 export const AppBox = styled(Intro)`
@@ -39,7 +42,7 @@ export const Message = styled.div`
   font-size: 0.8em;
 `;
 
-export const CompanyTitle = styled.h2`
+export const CompanyTitle = styled(Fade)`
   text-align:center;
   margin-top: 20px;
   margin-bottom: 0px;
@@ -48,5 +51,5 @@ export const CompanyTitle = styled.h2`
 `;
 
 export const PreloaderBox = styled.div`
-  margin-top:-10px;
+  margin-top:0px;
 `;

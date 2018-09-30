@@ -3,7 +3,7 @@ import posed from 'react-pose';
 
 const Intro = posed.div({
   enter: { opacity: 1, delay: 500 },
-  exit: { opacity: 0, transition: { duration: 200 } }
+  exit: { opacity: 0, transition: { duration: 100 } }
 });
 
 export const StockChartBox = styled(Intro)`
