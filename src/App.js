@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
 
-import StockInput from './components/StockInput';
-import StockPanel from './components/StockPanel';
-import StockDetail from './components/StockDetail';
-import StockChart from './components/StockChart';
+import StockInput from './components/StockInput/';
+import StockPanel from './components/StockPanel/';
+import StockDetail from './components/StockDetail/';
+import StockChart from './components/StockChart/';
 import './css/global';
-import { AppBox } from './css/components';
+import { AppBox } from './css/common_components';
 
 class App extends Component {
   render() {

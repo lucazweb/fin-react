@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Legend, Tooltip } from 'recharts';
 import { Eye, Grow, Spinner } from 'react-preloading-component';
-import { StockChartBox, PreloaderBox  }  from '../css/components';
+import { PreloaderBox  }  from '../../css/common_components';
+import { StockChartBox } from './styles';
 import { connect } from 'react-redux';
 
 const data = [

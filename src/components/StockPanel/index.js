@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { StocksPanelBox, CompanyTitle } from '../css/components';
+import {  StocksPanelBox } from './styles';
+import { CompanyTitle } from '../../css/common_components';
 
 const StockPanel = ({stocks}) => (
   <Fragment>

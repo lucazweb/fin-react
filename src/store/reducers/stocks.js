@@ -16,6 +16,7 @@ export default function(state = INITIAL_STATE, action){
       return { ...state, loading: true};
 
     case 'GET_STOCK_SUCCESS':
+    console.log(action.payload.data);
       return {
         ...state,
         loading: false,
