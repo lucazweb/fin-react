@@ -4,6 +4,18 @@ import { connect } from 'react-redux';
 import {  StocksPanelBox } from './styles';
 import { CompanyTitle } from '../../css/common_components';
 
+const ResolvePercentMarkup = (number) => {
+  if(number < 0)
+    return (<span className="dow-markup"> ({ number } %) </span> );
+  return (<span className="high-markup"> ({ number } %) </span> );
+}
+
+const ResolveChangeMarkup = (number) => {
+  if(number < 0)
+    return (<span className="dow-markup"> { number } </span> );
+  return (<span className="high-markup"> { number } </span> );
+}
+
 const StockPanel = ({stocks}) => (
   <Fragment>
     <CompanyTitle pose={stocks.close !== null ? 'enter' : 'exit'} > {stocks.company} </CompanyTitle>
@@ -11,7 +23,7 @@ const StockPanel = ({stocks}) => (
       { ((stocks.error == null) && (stocks.close !== null)) && (
         <Fragment>
           <span className="stock-value">{stocks.close}</span>
-          <span> {stocks.change }({stocks.changePercent}%) </span>
+          <span> { ResolveChangeMarkup(stocks.change) }{ ResolvePercentMarkup(stocks.changePercent) }</span>
         </Fragment>
       )}
     </StocksPanelBox>

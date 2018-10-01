@@ -16,14 +16,27 @@ export const StocksPanelBox = styled(Intro)`
 
   span{
     font-size: 1.8em;
-    color: #669966;
+    color: #409040;
     letter-spacing: 0.2px;
+  }
+
+  .dow-markup, .high-markup{
+    color: #900;
+    font-size:0.8em;
+    background: #f9edef;
+    margin-right:4px;
+  }
+
+  .high-markup{
+    color: #409040;
+    background: #f1fdf1;
   }
 
   .stock-value{
     font-size: 2.8em;
-    color: #0047bb;
+    color: #333;
     font-weight: bold;
-    margin-right: 2px;
+    margin-right: 4px;
+    margin-bottom: -7px;
   }
 `;
