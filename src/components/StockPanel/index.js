@@ -33,11 +33,11 @@ const StockPanel = ({stocks}) => (
 StockPanel.propTypes = {
   stocks: PropTypes.shape({
     loading: PropTypes.bool,
-    error: PropTypes.oneOfType([null, PropTypes.string]),
-    close: PropTypes.oneOfType([null, PropTypes.string]),
-    change: PropTypes.oneOfType([null, PropTypes.number]),
-    changePercent: PropTypes.oneOfType([null, PropTypes.number]),
-    company: PropTypes.string,
+    error: PropTypes.string,
+    close: PropTypes.number,
+    change: PropTypes.number,
+    changePercent: PropTypes.number,
+    company: PropTypes.string
   }).isRequired
 };
 

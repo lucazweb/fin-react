@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Legend, Tooltip } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
 import { Grow } from 'react-preloading-component';
 import { PreloaderBox }  from '../../css/common_components';
 import { StockChartBox } from './styles';
@@ -25,7 +25,6 @@ const StockChart = ({stocks}) => (
       stocks.close !== null && (
         <StockChartBox initialPose={'exit'} pose={'enter'}>
             <LineChart width={getWindowWidth()} height={getWindowHeight()} margin={{top:5, left:0}} data={stocks.chart}>
-              {/* <CartesianGrid /> */}
               <XAxis dataKey="label" />
               <YAxis dataKey="high" />
               <Tooltip />
@@ -54,10 +53,10 @@ StockChart.propTypes = {
       volume: PropTypes.number,
       vwap: PropTypes.number,
     })),
-    close: PropTypes.oneOfType([null, PropTypes.string]),
-    open: PropTypes.oneOfType([null, PropTypes.string]),
-    change: PropTypes.oneOfType([null, PropTypes.number]),
-    changePercent: PropTypes.oneOfType([null, PropTypes.number]),
+    close: PropTypes.number,
+    open: PropTypes.number,
+    change: PropTypes.number,
+    changePercent: PropTypes.number,
     company: PropTypes.string,
   }).isRequired
 }
