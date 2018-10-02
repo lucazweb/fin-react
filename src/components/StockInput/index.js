@@ -24,7 +24,7 @@ class StockInput extends Component{
   render(){
     return (
       <StockInputBox>
-        <input onChange={(e) => {this.handleStockRequest(e.target.value)}} className="main-input" placeholder="Insira um símbolo de companhia, ex. aapl.. fb.." />
+        <input onChange={(e) => {this.handleStockRequest(e.target.value)}} className="main-input" placeholder="Pesquise por símbolos, ex. aapl.. fb.." />
 
         {this.props.stocks.error !== null &&
           (<Message> {this.props.stocks.error }</Message>)

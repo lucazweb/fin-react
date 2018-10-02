@@ -5,13 +5,23 @@ export const StockInputBox = styled.div`
     width: 100%;
     transition: all ease 0.6s;
     box-shadow: inset 0 1px 1px rgba(10,10,10,.1);
-    font-size: 1.2em;
-    color: #6699cc;
+    font-size: 1.1em;
+    color: #666;
     text-align: center;
     padding: 10px 8px;
-    background: #f3f3f3;
+    background: #fbfbfb;
     border: 1px solid transparent;
+    border-bottom-color: #f3f3f3;
     border-radius: 3px;
+
+    &::placeholder{
+      color: #999;
+    }
+
+    &:hover{
+      background: #fff1b880;
+    }
+
     &:focus{
       border-color: #069;
       background: white;

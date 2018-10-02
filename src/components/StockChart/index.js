@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
-import { Grow } from 'react-preloading-component';
+import { Grow, Eye  } from 'react-preloading-component';
 import { PreloaderBox }  from '../../css/common_components';
 import { StockChartBox } from './styles';
 import { connect } from 'react-redux';
@@ -30,7 +30,7 @@ const getChartStroke = (number) => {
 
 const StockChart = ({stocks}) => (
   <Fragment>
-    {stocks.loading && (<PreloaderBox><Grow size={40} color="#0047bb" /></PreloaderBox>)}
+    {stocks.loading && (<PreloaderBox><Eye size={40} color="#0047bb" /></PreloaderBox>)}
     {
       stocks.close !== null && (
         <StockChartBox initialPose={'exit'} pose={'enter'}>

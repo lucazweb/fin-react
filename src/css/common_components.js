@@ -3,7 +3,7 @@ import posed from 'react-pose';
 
 const Intro = posed.div({
   enter: { height: 750, transition: {duration: 100}, delay: 250 },
-  exit: { height: 250, transition: { duration: 150 }, delay: 100 },
+  exit: { height: 190, transition: { duration: 150 }, delay: 100 },
 });
 
 const Fade = posed.h2({
@@ -12,9 +12,6 @@ const Fade = posed.h2({
 });
 
 export const AppBox = styled(Intro)`
-
-
-
   display: flex;
   flex-direction: column;
   transition: all ease 0.6s;
@@ -33,6 +30,7 @@ export const AppBox = styled(Intro)`
     text-align: center;
     margin-bottom: 20px;
   }
+
 `;
 
 export const Message = styled.div`
@@ -56,5 +54,5 @@ export const CompanyTitle = styled(Fade)`
 `;
 
 export const PreloaderBox = styled.div`
-  margin-top:0px;
+  margin-top:30px;
 `;

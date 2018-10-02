@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import posed from 'react-pose';
 
 const Intro = posed.div({
-  enter: { opacity: 1, height:'auto', delay: 150 },
+  enter: { opacity: 1, height:'auto', delay: 250 },
   exit: { opacity: 0, height:0, transition: { duration: 200 } },
 });
 
