@@ -12,17 +12,22 @@ const Fade = posed.h2({
 });
 
 export const AppBox = styled(Intro)`
+
+
+
   display: flex;
   flex-direction: column;
   transition: all ease 0.6s;
   width: 700px;
-  /* min-height: 400px; */
   margin:50px auto;
   padding: 25px;
   border-radius: 4px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 2px #ccc;
   background: white;
+  @media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
+    width: 90%;
+  }
 
   h1{
     text-align: center;

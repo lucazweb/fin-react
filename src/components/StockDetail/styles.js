@@ -11,7 +11,10 @@ export const StockDetailList = styled(Intro)`
   flex-flow: row wrap;
   width: 100%;
   list-style: none;
-
+  @media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
+    flex-direction: column;
+    flex-flow: column;
+  }
   li{
     width: 28%;
     margin: 2%;
@@ -26,5 +29,9 @@ export const StockDetailList = styled(Intro)`
       color: #6699cc;
       border-color: #6699cc;
     }
+    @media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
+      width: 90%;
+    }
+
   }
 `;
