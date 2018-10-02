@@ -12,11 +12,21 @@ const getWindowWidth = () => {
   if(window.innerWidth < 1024)
     return window.innerWidth - 10
   return defaultWidth
-}
+};
 
 const getWindowHeight = () => {
-  return 300
-}
+  let defaultHeight = 300;
+  return defaultHeight;
+};
+
+
+const getChartStroke = (number) => {
+  if(number < 0){
+    return "#900"
+  } else {
+    return "green"
+  }
+};
 
 const StockChart = ({stocks}) => (
   <Fragment>
@@ -28,7 +38,7 @@ const StockChart = ({stocks}) => (
               <XAxis dataKey="label" />
               <YAxis dataKey="high" />
               <Tooltip />
-              <Line type="monotone" dataKey="high" label="high" strokeWidth={2} stroke="#900" />
+              <Line type="monotone" dataKey="high" label="high" strokeWidth={2} stroke={getChartStroke(stocks.change)} />
             </LineChart>
         </StockChartBox>
       )
