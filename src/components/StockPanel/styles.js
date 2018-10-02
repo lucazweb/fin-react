@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import posed from 'react-pose';
 
 const Intro = posed.div({
-  enter: { opacity: 1, delay: 500 },
-  exit: { opacity: 0, transition: { duration: 200 } },
+  enter: { opacity: 1, height:'auto', delay: 150 },
+  exit: { opacity: 0, height:0, transition: { duration: 200 } },
 });
 
 export const StocksPanelBox = styled(Intro)`
