@@ -28,6 +28,9 @@ export const StocksPanelBox = styled(Intro)`
     font-size:0.8em;
     background: #f9edef;
     margin-right:4px;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
+      font-size: 0.7em;
+    }
   }
 
   .high-markup{
