@@ -31,6 +31,7 @@ export const StockDetailList = styled(Intro)`
     }
     @media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
       width: 90%;
+      height: 65px;
     }
 
   }

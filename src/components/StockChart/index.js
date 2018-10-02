@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 const getWindowWidth = () => {
   let defaultWidth = 600;
   if(window.innerWidth < 1024)
-    return window.innerWidth - 10
+    return window.innerWidth - 65
   return defaultWidth
 };
 
@@ -49,7 +49,6 @@ const StockChart = ({stocks}) => (
 StockChart.propTypes = {
   stocks: PropTypes.shape({
     loading: PropTypes.bool,
-    //error: PropTypes.oneOfType([null, PropTypes.string]),
     chart: PropTypes.arrayOf(PropTypes.shape({
       change: PropTypes.number,
       changeOverTime: PropTypes.number,

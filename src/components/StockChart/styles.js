@@ -16,7 +16,7 @@ export const StockChartBox = styled(Intro)`
   align-items: center;
   min-height: 300px;
   margin-top: 10px;
-  padding: 40px 40px 40px 20px;
+  padding: 40px 40px 40px 0px;
   border: 8px solid #f3f3f3;
   border-radius: 4px;
 
@@ -26,5 +26,8 @@ export const StockChartBox = styled(Intro)`
 
   @media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
    min-height: 250px;
+   border: 1px solid #f3f3f3;
+   padding: 40px 75px 40px 20px;
+   border-top-width: 0;
   }
 `;
