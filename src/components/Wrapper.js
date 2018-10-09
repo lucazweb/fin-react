@@ -4,19 +4,23 @@ import StockInput from './StockInput/';
 import StockPanel from './StockPanel/';
 import StockDetail from './StockDetail/';
 import StockChart from './StockChart/';
+import StockNews from './StockNews/';
 import { AppBox } from '../css/common_components';
 
 const Wrapper = ({stocks}) => (
+
   <AppBox pose={ stocks.close !== null ? 'enter' : 'exit'}>
     <div className="header">
       <h1> Fin.React</h1>
     </div>
-
     <StockInput />
     <StockPanel />
     <StockDetail />
     <StockChart />
+    <StockNews />
   </AppBox>
+
+
 );
 
 const mapStateToProps = state => ({

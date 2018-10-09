@@ -11,18 +11,20 @@ export const StockDetailList = styled(Intro)`
   flex-flow: row wrap;
   width: 100%;
   list-style: none;
+  margin-bottom: 80px;
   @media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
     flex-direction: column;
     flex-flow: column;
   }
   li{
     width: 28%;
-    margin: 2%;
+    height: 35px;
+    margin: 2.5% 2%;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #ccc;
     padding-top: 15px;
-    padding-bottom:5px;
+    padding-bottom:20px;
     font-size: 0.8em;
 
     &:hover{

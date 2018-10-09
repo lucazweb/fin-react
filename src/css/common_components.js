@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import posed from 'react-pose';
 
 const Intro = posed.div({
-  enter: { height: 750, transition: {duration: 100}, delay: 250 },
+  enter: { height: 980, transition: {duration: 100}, delay: 250 },
   exit: { height: 190, transition: { duration: 150 }, delay: 100 },
 });
 
@@ -48,7 +48,7 @@ export const Message = styled.div`
 export const CompanyTitle = styled(Fade)`
   text-align:center;
   margin-top: 20px;
-  margin-bottom: 0px;
+  margin-bottom: 15px;
   color: #333;
   font-weight: normal;
 `;

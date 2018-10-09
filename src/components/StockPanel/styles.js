@@ -12,7 +12,7 @@ export const StocksPanelBox = styled(Intro)`
   text-align: center;
   justify-content: center;
   align-items: flex-end;
-  margin:20px auto;
+  margin:30px auto;
   @media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
     flex-direction: column;
     align-items: center;

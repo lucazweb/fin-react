@@ -19,6 +19,7 @@ class StockInput extends Component{
 
   handleStockRequest(symbol){
     this.props.getStockRequest(symbol);
+    this.props.getStockNewsRequest(symbol);
   }
 
   render(){

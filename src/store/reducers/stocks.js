@@ -1,6 +1,7 @@
 const INITIAL_STATE = {
   loading: false,
   error: null,
+  newsError: null,
   chart: [],
   close: null,
   open: null,
@@ -8,6 +9,7 @@ const INITIAL_STATE = {
   changePercent: null,
   company: null,
   sector: null,
+  news: {},
 }
 
 export default function(state = INITIAL_STATE, action){
@@ -36,6 +38,22 @@ export default function(state = INITIAL_STATE, action){
       ...INITIAL_STATE,
       error: action.payload.error
     }
+
+    case 'GET_STOCK_NEWS_REQUEST':
+      return { ...state, loading: true};
+
+    case 'GET_STOCK_NEWS_SUCCESS':
+      console.log(action.payload.data);
+      return { ...state, news: action.payload.data[0] }
+
+    case 'GET_STOCK_NEWS_FAILURE':
+      console.log(action.payload.error);
+      return {
+        ...INITIAL_STATE,
+        newsError: action.payload.error
+      }
+
+
 
     default:
       return state;
