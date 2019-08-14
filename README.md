@@ -4,7 +4,7 @@ Aplicação desenvolvida com React e Redux + Redux-Saga, baseada na API da [IEX 
 
 ![Imagem do projeto](screenshot.png)
 
-#### Instalação :fa-save:
+#### Instalação
 
   - `yarn install` ou `npm install` na raiz do projeto
   - Executar `yarn start` ou `npm start`
