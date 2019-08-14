@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
-import { Grow, Eye  } from 'react-preloading-component';
+import { Eye  } from 'react-preloading-component';
 import { PreloaderBox }  from '../../css/common_components';
 import { StockChartBox } from './styles';
 import { connect } from 'react-redux';
@@ -46,32 +46,35 @@ const StockChart = ({stocks}) => (
   </Fragment>
 );
 
-StockChart.propTypes = {
-  stocks: PropTypes.shape({
-    loading: PropTypes.bool,
-    chart: PropTypes.arrayOf(PropTypes.shape({
-      change: PropTypes.number,
-      changeOverTime: PropTypes.number,
-      changePercent: PropTypes.number,
-      close: PropTypes.number,
-      date: PropTypes.string,
-      high: PropTypes.number,
-      label: PropTypes.string,
-      open: PropTypes.number,
-      unadjustedVolume: PropTypes.number,
-      volume: PropTypes.number,
-      vwap: PropTypes.number,
-    })),
-    close: PropTypes.number,
-    open: PropTypes.number,
-    change: PropTypes.number,
-    changePercent: PropTypes.number,
-    company: PropTypes.string,
-  }).isRequired
-}
+// StockChart.propTypes = {
+//   stocks: PropTypes.shape({
+//     loading: PropTypes.bool,
+//     chart: PropTypes.arrayOf(PropTypes.shape({
+//       change: PropTypes.number,
+//       changeOverTime: PropTypes.number,
+//       changePercent: PropTypes.number,
+//       close: PropTypes.number,
+//       date: PropTypes.string,
+//       high: PropTypes.number,
+//       label: PropTypes.string,
+//       open: PropTypes.number,
+//       unadjustedVolume: PropTypes.number,
+//       volume: PropTypes.number,
+//       vwap: PropTypes.number,
+//     })),
+//     close: PropTypes.number,
+//     open: PropTypes.number,
+//     change: PropTypes.number,
+//     changePercent: PropTypes.number,
+//     company: PropTypes.string,
+//   }).isRequired
+// }
 
-const mapStateToProps = state => ({
-  stocks: state.stocks,
-});
+const mapStateToProps = function(state){
+ return{
+   stocks: state.stocks,
+   chart: state.stocks.chart.chart
+ } 
+};
 
 export default connect(mapStateToProps)(StockChart);

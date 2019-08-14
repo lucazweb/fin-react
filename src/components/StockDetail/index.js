@@ -19,24 +19,38 @@ const StockDetail = ({stocks}) => (
               <strong>Variação</strong>
               <span>{stocks.change}</span>
           </li>
+          <li>
+              <strong>Employes</strong>
+              <span>{stocks.employees}</span>
+          </li>          
+          <li>
+              <strong>CEO</strong>
+              <span>{stocks.ceo}</span>
+          </li>          
+          <li>
+              <strong>Site</strong>
+              <a className="company-site" target="_blank" href={stocks.site}>Acessar</a>
+          </li>          
       </StockDetailList>
   </Fragment>
 );
 
-StockDetail.propTypes = {
-  stocks: PropTypes.shape({
-    loading: PropTypes.bool,
-    error: PropTypes.string,
-    close: PropTypes.number,
-    open: PropTypes.number,
-    change: PropTypes.number,
-    changePercent: PropTypes.number,
-    company: PropTypes.string,
-  }).isRequired
-};
+// StockDetail.propTypes = {
+//   stocks: PropTypes.shape({
+//     loading: PropTypes.bool,
+//     error: PropTypes.string,
+//     close: PropTypes.number,
+//     open: PropTypes.number,
+//     change: PropTypes.number,
+//     changePercent: PropTypes.number,
+//     company: PropTypes.string,
+//   }).isRequired
+// };
 
-const mapStateToProps = state => ({
-  stocks: state.stocks,
-})
+const mapStateToProps = function(state){
+ return {
+   stocks: state.stocks,
+ } 
+}
 
 export default connect(mapStateToProps)(StockDetail);

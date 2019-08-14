@@ -10,7 +10,7 @@ injectGlobal`
   }
 
   body{
-    background: #f3f3f3;
+    background: rgb(32, 30, 41);
     text-rendering: optimizeLegibility !important;
     -webkkit-font-smoothing: antialiased !important;
     font-family: sans-serif;
@@ -18,6 +18,23 @@ injectGlobal`
 
   h1, h2, h3, span, p, li, div{
     font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  .text-align{
+    text-align:center;
+  }
+
+  .app-description{
+    margin-bottom: 20px;
+  }
+
+  .company-site{
+    text-decoration:none;
+    color: #069;
+  }
+
+  .company-site:hover{
+    text-decoration: underline;
   }
 
 `;

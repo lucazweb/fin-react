@@ -1,5 +1,7 @@
 # Fin-React
 
+![Imagem do projeto](screenshot.png)
+
 #### Instalação
 
   - `yarn install` ou `npm install` na raiz do projeto

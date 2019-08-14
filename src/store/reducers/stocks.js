@@ -18,22 +18,23 @@ export default function(state = INITIAL_STATE, action){
       return { ...state, loading: true};
 
     case 'GET_STOCK_SUCCESS':
-    console.log(action.payload.data);
       return {
         ...state,
         loading: false,
         error: null,
-        chart: action.payload.data.chart,
-        close: action.payload.data.quote.close,
-        open: action.payload.data.quote.open,
-        change: action.payload.data.quote.change,
-        changePercent: action.payload.data.quote.changePercent,
-        company: action.payload.data.quote.companyName,
-        sector: action.payload.data.quote.sector,
+        chart: action.payload.data.chart.chart,
+        close: action.payload.data.iexRealtimePrice,
+        open: action.payload.data.open,
+        change: action.payload.data.change,
+        changePercent: action.payload.data.changePercent,
+        company: action.payload.data.companyName,
+        sector: action.payload.data.company.sector,
+        employees: action.payload.data.company.employees,
+        ceo: action.payload.data.company.CEO,
+        site: action.payload.data.company.website,
       }
 
     case 'GET_STOCK_FAILURE':
-    console.log(action.payload.error);
     return {
       ...INITIAL_STATE,
       error: action.payload.error
@@ -43,17 +44,13 @@ export default function(state = INITIAL_STATE, action){
       return { ...state, loading: true};
 
     case 'GET_STOCK_NEWS_SUCCESS':
-      console.log(action.payload.data);
       return { ...state, news: action.payload.data[0] }
 
     case 'GET_STOCK_NEWS_FAILURE':
-      console.log(action.payload.error);
       return {
         ...INITIAL_STATE,
         newsError: action.payload.error
       }
-
-
 
     default:
       return state;

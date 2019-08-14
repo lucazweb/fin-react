@@ -11,7 +11,7 @@ export const StockDetailList = styled(Intro)`
   flex-flow: row wrap;
   width: 100%;
   list-style: none;
-  margin-bottom: 80px;
+  margin-bottom: 0px;
   @media only screen and (min-device-width : 320px) and (max-device-width : 1024px) {
     flex-direction: column;
     flex-flow: column;
