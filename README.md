@@ -1,10 +1,16 @@
 # Fin-React
 
-Aplicação desenvolvida com React e Redux + Redux-Saga, baseada na API da [IEX Trade API](https://iexcloud.io/docs/api/ "IEX Trade"), que busca através de símbolos das empresas, informações de ações e seus detalhes na bolsa de valores.
+React e Redux + Redux-Saga application based in [IEX Trade API](https://iexcloud.io/docs/api/ "IEX Trade") API. 
+
+* Search for companies symbols in stock market
+* Display company information like papers price
 
 ![Imagem do projeto](screenshot.png)
 
-#### Instalação
+#### Install
 
-  - `yarn install` ou `npm install` na raiz do projeto
-  - Executar `yarn start` ou `npm start`
+  - `yarn install` or `npm install` in project root
+  - `yarn start` or `npm start` for start application
+  
+#### Build :rocket:
+  - `yarn build` or `npm run build` in project root folder
